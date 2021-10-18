@@ -4,7 +4,7 @@ SUMMIT (Summary-level Unified Method for Modeling Integrated Transcriptome) is a
 
 This approach is described in,
 
-> [ABCDEFG]
+> [A_TITLE_HERE]
 
 ## Outline
 
@@ -15,7 +15,7 @@ This approach is described in,
 
 mainbody_cpp_final.R is SUMMIT's main function to train imputation models. It has only 2 input arguments --name_batch and --method. name_batch is the desired name for this batch of output and method is designated penalized regression method that you can choose from (LASSO, ElNet, SCAD, MCP, MNet).
 
-### Data
+### Data preparation
 
 #### Reference panel
 
