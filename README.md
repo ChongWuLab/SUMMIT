@@ -73,7 +73,7 @@ APSS has 3 principal input arguments.
 
 #### The must-have columns
 
-You can use any summary statistics.
+You can use any summary statistics files with reasonable quality control just as long they contain specific columns for SUMMIT to work with.
 
 The must-have columns for SUMMIT are ```A1, A2, Z, CHR```.
 
