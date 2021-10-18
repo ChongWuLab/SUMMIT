@@ -69,7 +69,7 @@ APSS has 3 principal input arguments.
 
 ```filename``` is the name of the summary statistics file to be processed.
 
-```BIG``` is the number of GBs and default is 2. If ```BIG``` is set as 2, then for any summary statistics file bigger than 2GB, APSS will do an exploratory read first and will significantly shorten the runtime.
+```BIG``` is the number of GBs and default is 2. If ```BIG``` is set as 2, then for any summary statistics file bigger than 2GB, APSS will do an exploratory read first. By doing so, APSS could significantly shorten the runtime and handle summary statistics files bigger than 10GB. 
 
 #### The must-have columns
 
