@@ -27,7 +27,11 @@ As for the summary-level eQTLgen data, you can download from https://www.eqtlgen
 
 #### GTEx-7 and GTEx-8 data
 
-As we used both data from GTEx-7 and GTEx-8 as our basis for tuning and model validation, we offer
+As we used both data from GTEx-7 and GTEx-8 as our basis for tuning and model validation, the data we used can be download from:
+
+processed genotype matrix (*X*): LINK-3.
+
+expression level (*Y*): LINK-4.
 
 ### Data alignment
 
@@ -45,7 +49,8 @@ Rscript mainbody_cpp_rsid_precise.R \
 
 ### Built-in parallel computing
 
-Both ```mainbody_cpp_rsid_precise.R``` and ```mainbody_cpp_pos_precise.R``` contain a snippet that guarantees mutual exclusion for every sub-job. Simply put, you can run ```mainbody_cpp_rsid_precise.R``` and ```mainbody_cpp_pos_precise.R``` as many times as you want and it will figure out if there exists 
+Both ```mainbody_cpp_rsid_precise.R``` and ```mainbody_cpp_pos_precise.R``` contain a snippet that guarantees mutual exclusion for every sub-job. Simply put, you can run ```mainbody_cpp_rsid_precise.R``` and ```mainbody_cpp_pos_precise.R``` as many times as you want and it will figure out if there is unfinished job on its own.
+
 ### Trained imputaion models
 
 All the ready-to-use SUMMIT Whole_Blood imputation models can be found here: LINK-5.
