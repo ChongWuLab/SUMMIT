@@ -55,9 +55,11 @@ Both ```mainbody_cpp_rsid_precise.R``` and ```mainbody_cpp_pos_precise.R``` cont
 
 All the ready-to-use SUMMIT Whole_Blood imputation models can be found here: LINK-5.
 
-## <a name="TWAS"></a>TWAS
+## <a name="TWAS"></a>Association test
 
-### Pre-process your summary statistics using APSS
+### Data preparation
+
+#### Pre-process your summary statistics using APSS
 
 APSS is an interactive R function that can easily process GWAS summary statistics and shape GWAS summary statistics into any desired format.
 
@@ -69,9 +71,15 @@ APSS has 3 principal input arguments.
 
 ```BIG``` is the number of GBs and default is 2. If ```BIG``` is set as 2, then for any summary statistics file bigger than 2GB, APSS will do an exploratory read first and will significantly shorten the runtime.
 
-### The must-have columns
+#### The must-have columns
 
-The must-have columns for SUMMIT are A1, A2, Z, CHR. If you are using the rsID-aligned models, you must include SNP column. If you are using the position-aligned models, you must include POS column.
+You can use any summary statistics.
+
+The must-have columns for SUMMIT are ```A1, A2, Z, CHR```.
+
+If you are using the rsID-aligned models, you must include ```SNP``` column.
+
+If you are using the position-aligned models, you must include ```POS``` column.
 
 ### Example run
 
