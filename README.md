@@ -63,13 +63,15 @@ APSS is an interactive R function that can easily process GWAS summary statistic
 
 APSS has 3 principal input arguments.
 
-```directory.working``` is the working directory. 
+```directory.working``` is the working directory.
+
 ```filename``` is the name of the summary statistics file to be processed.
+
 ```BIG``` is the number of GBs and default is 2. If ```BIG``` is set as 2, then for any summary statistics file bigger than 2GB, APSS will do an exploratory read first and will significantly shorten the runtime.
 
 ### The must-have columns
 
-The must-have columns for SUMMIT are A1, A2, Z, CHR. If you are using the rsid-aligned models, you must include SNP column. If you are using the position-aligned models, you must include POS column.
+The must-have columns for SUMMIT are A1, A2, Z, CHR. If you are using the rsID-aligned models, you must include SNP column. If you are using the position-aligned models, you must include POS column.
 
 ### Example run
 
