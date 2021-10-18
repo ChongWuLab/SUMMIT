@@ -13,7 +13,7 @@ More details of SUMMIT is described in,
 
 ## <a name="TRAIN"></a>Training models
 
-mainbody_cpp_final.R is SUMMIT's main function to train imputation models. It has only 2 input arguments ```--name_batch``` and --method. name_batch is the desired name for this batch of output and method is designated penalized regression method that you can choose from (LASSO, ElNet, SCAD, MCP, MNet).
+mainbody_cpp_final.R is SUMMIT's main function to train imputation models. It has only 2 input arguments ```--name_batch``` and ```--method```. ```--name_batch``` is the desired name for this batch of output and ```--method``` is designated penalized regression method that you can choose from (LASSO, ElNet, SCAD, MCP, MNet).
 
 ### Data preparation
 
