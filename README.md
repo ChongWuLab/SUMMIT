@@ -42,7 +42,7 @@ SUMMIT offers two approaches to align the reference panel with the summary-level
 After we prepared the data, we can train imputation models via the following single line.
 
 ```
-Rscript mainbody_cpp_rsid_precise.R \
+Rscript mainbody_cpp_rsid.R \
 --name_batch SCAD_1e-6_rsid \
 --method SCAD \
 ```
