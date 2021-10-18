@@ -57,9 +57,15 @@ All the ready-to-use SUMMIT Whole_Blood imputation models can be found here: LIN
 
 ## <a name="TWAS"></a>TWAS
 
-### Pre-process your summary statistics
+### Pre-process your summary statistics using APSS
 
-APSS is a interactive R function to easily process GWAS summary statistics and shape GWAS summary statistics into any desired format. 
+APSS is an interactive R function that can easily process GWAS summary statistics and shape GWAS summary statistics into any desired format.
+
+APSS has 3 principal input arguments.
+
+```directory.working``` is the working directory. 
+```filename``` is the name of the summary statistics file to be processed.
+```BIG``` is the number of GBs and default is 2. If ```BIG``` is set as 2, then for any summary statistics file bigger than 2GB, APSS will do an exploratory read first and will significantly shorten the runtime.
 
 ### The must-have columns
 
