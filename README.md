@@ -19,10 +19,10 @@ mainbody_cpp_final.R is SUMMIT's main function to train imputation models. It ha
 
 #### Reference panel
 
-We used 1000 Genome European ancestry as our reference panel.
+We used data from 1000 Genome European ancestry as our reference panel. With standard quality control procedure, we splitted the processed data by chromosome.
 
 #### eQTLgen summary statistics
-As for the summary-level eQTL-gen data, you can download from https://www.eqtlgen.org/cis-eqtls.html. Notice that the eQTLgen dataset is over 3.5Gb, we have splitted them into smaller files (https://www.ABC.com) after standard quality control. If you do wish to process the summary-level eQTL-gen data on your own, please do not change the column names or column order from eQTL-gen's original data.
+As for the summary-level eQTLgen data, you can download from https://www.eqtlgen.org/cis-eqtls.html. Notice that the eQTLgen dataset is over 3.5Gb, we have splitted them into small ```.RData``` files by gene_id after standard quality control. If you do wish to process the summary-level eQTLgen data on your own, please do not change the column names or column order from eQTL-gen's original data.
 
 #### GTEx-7 and GTEx-8 genotype data
 You will also need GTEx-7 and GTEx-8 genotype data as well as the response (expression level).
