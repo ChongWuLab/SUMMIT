@@ -23,20 +23,19 @@ We used data from 1000 Genome European ancestry as our reference panel. With sta
 
 #### eQTLgen summary statistics
 
-As for the summary-level eQTLgen data, you can download from https://www.eqtlgen.org/cis-eqtls.html. Notice that the eQTLgen dataset is over 3.5Gb, we have splitted them into small ```.RData``` files (You can download from LINK-2) by gene_id after standard quality control. If you do wish to process the summary-level eQTLgen data on your own, please do **not** change the column names or column order from eQTLgen's original data.
+As for the summary-level eQTLgen data, you can download from https://www.eqtlgen.org/cis-eqtls.html. Notice that the eQTLgen dataset is over 3.5Gb, we have splitted them into small ```.RData``` files (You can download from LINK-2) by gene_id after standard quality control. If you do wish to process the summary-level eQTLgen data on your own, please do **NOT** change the column names or column order from eQTLgen's original data.
 
 #### GTEx-7 and GTEx-8 data
 
-SUMMIT used 
+As we used both data from GTEx-7 and GTEx-8 as our basis for tuning and model validation, we offer
 
+### Data alignment
 
-### Alignment
-
-SUMMIT offers two approaches to align the reference panel with the summary-level data.
+SUMMIT offers two approaches to align the reference panel with the summary-level data. If you wish to align your data by rsID, use mainbody_cpp_rsid_precise.R. If you wish to align your data by chromosome+position, use mainbody_cpp_pos_precise.R.
 
 ### Example run
 
-After we prepared the data, we can run SUMMIT via the following single line.
+After we prepared the data, we can train imputation models via the following single line.
 
 ```
 Rscript mainbody_cpp_rsid_precise.R \
@@ -44,6 +43,9 @@ Rscript mainbody_cpp_rsid_precise.R \
 --method SCAD \
 ```
 
+### Built-in parallel computing
+
+Both ```mainbody_cpp_rsid_precise.R``` and ```mainbody_cpp_pos_precise.R``` contain a snippet that guarantees mutual exclusion for every sub-job. Simply put, you can run ```mainbody_cpp_rsid_precise.R``` and ```mainbody_cpp_pos_precise.R``` as many times as you want and it will figure out if there exists 
 ### Trained imputaion models
 
 All the ready-to-use SUMMIT Whole_Blood imputation models can be found here: LINK-5.
