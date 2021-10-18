@@ -1,15 +1,15 @@
 # SUMMIT
 
-SUMMIT (Summary-level Unified Method for Modeling Integrated Transcriptome) is a pipeline designed to improve the ABCDEF.
+SUMMIT (Summary-level Unified Method for Modeling Integrated Transcriptome).
 
-This approach is described in,
+More details of SUMMIT is described in,
 
 > [LINK-1]
 
 ## Outline
 
-1. [Training imputation models](#TRAIN)
-2. [TWAS](#TWAS)
+1. [Training imputation model](#TRAIN)
+2. [Association test](#TWAS)
 
 ## <a name="TRAIN"></a>Training models
 
