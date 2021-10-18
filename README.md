@@ -57,6 +57,18 @@ All the ready-to-use SUMMIT Whole_Blood imputation models can be found here: LIN
 
 ## <a name="TWAS"></a>Association test
 
+```step2_pos.R``` is SUMMIT's function for association test using position-aligned models.
+
+```step2_rsid.R``` is SUMMIT's function for association test using rsID-aligned models.
+
+For both functions, the input arguments are:
+
+```--path.ref``` is the path of the reference panel used plus the prefixes of reference panel files.
+
+```--trait``` is the name of the input summary statistics files.
+
+```--path.out``` is the path of the output folder.
+
 ### Data preparation
 
 #### Pre-process your summary statistics using APSS
@@ -93,7 +105,7 @@ Rscript step2_pos.R \
 ```
 Rscript step2_rsid.R \
 --path.ref my-reference-panel/1000G.EUR.ALLSNP.QC.CHR \
---trait my-trait-1 \
+--trait my-trait-2 \
 --path.out my-output-folder \
 ```
 
