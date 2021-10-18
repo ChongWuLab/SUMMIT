@@ -23,7 +23,7 @@ We used data from 1000 Genome European ancestry as our reference panel. With sta
 
 #### eQTLgen summary statistics
 
-As for the summary-level eQTLgen data, you can download from https://www.eqtlgen.org/cis-eqtls.html. Notice that the eQTLgen dataset is over 3.5Gb, we have splitted them into small ```.RData``` files (You can download from LINK-2) by gene_id after standard quality control. If you do wish to process the summary-level eQTLgen data on your own, please do not change the column names or column order from eQTL-gen's original data.
+As for the summary-level eQTLgen data, you can download from https://www.eqtlgen.org/cis-eqtls.html. Notice that the eQTLgen dataset is over 3.5Gb, we have splitted them into small ```.RData``` files (You can download from LINK-2) by gene_id after standard quality control. If you do wish to process the summary-level eQTLgen data on your own, please do **not** change the column names or column order from eQTLgen's original data.
 
 #### GTEx-7 and GTEx-8 data
 
