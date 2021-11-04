@@ -2,7 +2,7 @@
 
 SUMMIT (Summary-level Unified Method for Modeling Integrated Transcriptome).
 
-![Illustration figure on SUMMIT's workflow](illustration.pdf)
+![Illustration figure on SUMMIT's workflow](illustration.bmp)
 
 More details of SUMMIT is described in,
 
