@@ -5,7 +5,7 @@ Summary-level Unified Method for Modeling Integrated Transcriptome (SUMMIT), is 
 Following is an illustration figure on SUMMIT's workflow.
 
 <p align="center">
-<img src="illustration.bmp" alt="workflow" width="800"/>
+<img src="illustration.bmp" alt="workflow" width="700"/>
 </p>
 
 More details on SUMMIT are extensively described in,
