@@ -117,8 +117,8 @@ Rscript step2_rsid.R \
 
 ## License
 
-Maintainer: [Zichen Zhang] (zz17@my.fsu.edu)
+Maintainer: [Zichen Zhang] (zz17@fsu.edu)
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2013-present, Zichen Zhang (zz17@my.fsu.edu)
+Copyright (c) 2013-present, Zichen Zhang (zz17@fsu.edu)
