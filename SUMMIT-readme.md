@@ -2,7 +2,7 @@
 
 ## Simulation
 
-### Figure 2(a)
+### Figure 2(a) and 2(b)
 
 ```
 Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
@@ -33,10 +33,39 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 | 0.1 | 0.10 | 11  |
 | 0.1 | 0.20 | 12  |
 
+### Figure 2(c)
 
+```
+Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
+--h2_e A \
+--h2_p 0.2 \
+--p_causal 0.01 \
+--n B \
+--sumstats TRUE \
+--gene_ENSG ENSG00000258289 \
+--UKB TRUE \
+--folder_output SIM \
+--t1e FALSE \
+--seed C \
+```
 
-
-
+| A      | B | C |
+| ----- | ----- | ----- | -- |
+| 0.005 | 300 | 13 |
+| 0.005 | 600 | 14 |
+| 0.005 | 3000 | 15 |
+| 0.005 | 10000 | 16 |
+| 0.005 | 31684 | 17 |
+| 0.01 | 300 | 18 |
+| 0.01 | 600 | 19 |
+| 0.01 | 3000 | 20 |
+| 0.01 | 10000 | 21 |
+| 0.01 | 31684 | 22 |
+| 0.1 | 300 | 23 |
+| 0.1 | 600 | 24 |
+| 0.1 | 3000 | 25 |
+| 0.1 | 10000 | 26 |
+| 0.1 | 31684 | 27 |
 
 
 
