@@ -264,6 +264,10 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --seed 75 \
 ```
 
+## Tips
+
+In line 663, you can change ```runs``` to a smaller number to save time and still get results that are very similar to ours.
+
 ## Notes
 
 All the above codes are for replication purposes and the users may need to change the directory and install the necessary packages to run it smoothly. If you have any questions, feel free to contact us (Zichen Zhang, [zz17@fsu.edu](mailto:zz17@fsu.edu))
