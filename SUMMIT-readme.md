@@ -83,7 +83,32 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --seed C \
 ```
 
-To reproduce this figure, use exact options for Figure 2(a) and 2(b) but change the flag ```p_causal``` to 0.1, 0.5, and 0.8.
+To reproduce this figure, use exact same options for Figure 2(a) and 2(b) but change the flag ```p_causal``` to 0.1, 0.5, and 0.8.
+
+### Supplementary Figure 2
+
+```
+Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
+--h2_e 0.05 \
+--h2_p 0.2 \
+--p_causal 0.2 \
+--n A \
+--sumstats B \
+--gene_ENSG ENSG00000258289 \
+--UKB TRUE \
+--folder_output SIM \
+--t1e FALSE \
+--seed C \
+```
+
+| A      | B | C |
+| ----- | ----- | -- |
+| 300 | FALSE | 28 |
+| 600 | FALSE | 29 |
+| 3000 | FALSE | 30 |
+| 10000 | FALSE | 31 |
+| 31684 | FALSE | 32 |
+| 31684 | TRUE | 33 |
 
 
 ## Notes
