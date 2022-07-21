@@ -188,7 +188,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --seed SEED \
 ```
 
-| A      | B | C |
+| A      | B | SEED |
 | ----- | ----- | ---- |
 | 300 | FALSE | 58 |
 | 600 | FALSE | 59 |
@@ -213,7 +213,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --seed SEED \
 ```
 
-| A      | B | C |
+| A      | B | SEED |
 | ----- | ----- | ---- |
 | 300 | FALSE | 64 |
 | 600 | FALSE | 65 |
@@ -239,7 +239,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --seed SEED \
 ```
 
-| A      | B | C |
+| A      | B | SEED |
 | ----- | ----- | ---- |
 | 0.05 | 300 | 70 |
 | 0.05 | 600 | 71 |
@@ -277,6 +277,8 @@ to get the sub-job's index from the global environment. Depending on your comput
 In line 663 of ```Simulation.R```, you can change ```runs``` to a smaller number to save time and still get results that are very similar to ours.
 
 ## Notes
+
+We made every effort to help users replicate our results exactly. All results were tested on CentOS Linux 8. For each figure and table, you may need to change the parameters (denoted by A, B, and SEED) as we suggested. The codes can also serve as a launching point for your own studies.
 
 All the above codes are for replication purposes and the users may need to change the directory and install the necessary packages to run it smoothly. If you have any questions, feel free to contact us (Zichen Zhang, [zz17@fsu.edu](mailto:zz17@fsu.edu))
 
