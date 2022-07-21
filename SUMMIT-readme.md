@@ -18,10 +18,10 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --seed C \
 ```
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| Syntax      | Description | C |
+| ----------- | ----------- | --- |
+| 0.005     | 0.01       | 1 |
+| 0.005     | 0.01       | 1 |
 
 
 
