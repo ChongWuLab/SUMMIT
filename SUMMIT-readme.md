@@ -83,7 +83,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --seed C \
 ```
 
-To reproduce this figure, use exact options from Figure 2(a) and 2(b) but change the flag ```p_causal``` to 0.1, 0.5, and 0.8.
+To reproduce this figure, use exact options for Figure 2(a) and 2(b) but change the flag ```p_causal``` to 0.1, 0.5, and 0.8.
 
 
 ## Notes
