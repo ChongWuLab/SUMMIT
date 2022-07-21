@@ -264,14 +264,9 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --seed 75 \
 ```
 
-
-
-
 ## Notes
 
 All the above codes are for replication purposes and the users may need to change the directory and install the necessary packages to run it smoothly. If you have any questions, feel free to contact us (Zichen Zhang, [zz17@fsu.edu](mailto:zz17@fsu.edu))
-
-
 
 ## Disclaimer
 
