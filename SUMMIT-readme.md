@@ -8,7 +8,7 @@
 Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --h2_e A \
 --h2_p 0.2 \
---p_causal B\
+--p_causal B \
 --n 31684 \
 --sumstats TRUE \
 --gene_ENSG ENSG00000258289 \
@@ -67,12 +67,28 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 | 0.1 | 10000 | 26 |
 | 0.1 | 31684 | 27 |
 
+### Supplementary Figure 1
 
+```
+Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
+--h2_e A \
+--h2_p 0.1 \
+--p_causal B \
+--n 31684 \
+--sumstats TRUE \
+--gene_ENSG ENSG00000258289 \
+--UKB TRUE \
+--folder_output SIM \
+--t1e FALSE \
+--seed C \
+```
+
+To reproduce this figure, use exact options from Figure 2(a) and 2(b) but change the flag ```p_causal``` to 0.1, 0.5, and 0.8.
 
 
 ## Notes
 
-All the above codes are for replication purposes and the users may need to change the directory and install the necessary packages to run it smoothly. If you have any questions, feel free to contact us (Chong Wu, [cwu3@fsu.edu](mailto:cwu3@fsu.edu))
+All the above codes are for replication purposes and the users may need to change the directory and install the necessary packages to run it smoothly. If you have any questions, feel free to contact us (Zichen Zhang, [zz17@fsu.edu](mailto:zz17@fsu.edu))
 
 
 
@@ -82,4 +98,4 @@ The codes are provided "as is" and the author disclaims all warranties with rega
 
 ### Author
 
-Xinwei Ma, Jingshen Wang, and Chong Wu
+Zichen Zhang, and Chong Wu
