@@ -18,7 +18,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --seed C \
 ```
 
-| Syntax      | Description | C |
+| A      | B | C |
 | ----- | ----- | --- |
 | 0.005 | 0.01 | 1  |
 | 0.005 | 0.05 | 2  |
