@@ -15,11 +15,11 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --UKB TRUE \
 --folder_output SIM \
 --t1e FALSE \
---seed C \
+--seed SEED \
 ```
 
-| A      | B | C |
-| ----- | ----- | --- |
+| A      | B | SEED |
+| ----- | ----- | ---- |
 | 0.005 | 0.01 | 1  |
 | 0.005 | 0.05 | 2  |
 | 0.005 | 0.10 | 3  |
@@ -46,11 +46,11 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --UKB TRUE \
 --folder_output SIM \
 --t1e FALSE \
---seed C \
+--seed SEED \
 ```
 
-| A      | B | C |
-| ----- | ----- | -- |
+| A      | B | SEED |
+| ----- | ----- | ---- |
 | 0.005 | 300 | 13 |
 | 0.005 | 600 | 14 |
 | 0.005 | 3000 | 15 |
@@ -80,7 +80,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --UKB TRUE \
 --folder_output SIM \
 --t1e FALSE \
---seed C \
+--seed SEED \
 ```
 
 To reproduce this figure, use exact same options for Figure 2(a) and 2(b) but change the flag ```p_causal``` to 0.1, 0.5, and 0.8.
@@ -98,11 +98,11 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --UKB TRUE \
 --folder_output SIM \
 --t1e FALSE \
---seed C \
+--seed SEED \
 ```
 
-| A      | B | C |
-| ----- | ----- | -- |
+| A      | B | SEED |
+| ----- | ----- | ---- |
 | 300 | FALSE | 28 |
 | 600 | FALSE | 29 |
 | 3000 | FALSE | 30 |
@@ -123,11 +123,11 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --UKB TRUE \
 --folder_output SIM \
 --t1e FALSE \
---seed C \
+--seed SEED \
 ```
 
-| A      | B | C |
-| ----- | ----- | --- |
+| A      | B | SEED |
+| ----- | ----- | ---- |
 | 0.005 | 0.01 | 34 |
 | 0.005 | 0.05 | 35 |
 | 0.005 | 0.10 | 36  |
@@ -154,11 +154,11 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --UKB TRUE \
 --folder_output SIM \
 --t1e FALSE \
---seed C \
+--seed SEED \
 ```
 
-| A      | B | C |
-| ----- | ----- | --- |
+| A      | B | SEED |
+| ----- | ----- | ---- |
 | 0.005 | 0.01 | 46 |
 | 0.005 | 0.05 | 47 |
 | 0.005 | 0.10 | 48  |
@@ -185,11 +185,11 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --UKB TRUE \
 --folder_output SIM \
 --t1e FALSE \
---seed C \
+--seed SEED \
 ```
 
 | A      | B | C |
-| ----- | ----- | -- |
+| ----- | ----- | ---- |
 | 300 | FALSE | 58 |
 | 600 | FALSE | 59 |
 | 3000 | FALSE | 60 |
@@ -210,11 +210,11 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --UKB TRUE \
 --folder_output SIM \
 --t1e FALSE \
---seed C \
+--seed SEED \
 ```
 
 | A      | B | C |
-| ----- | ----- | -- |
+| ----- | ----- | ---- |
 | 300 | FALSE | 64 |
 | 600 | FALSE | 65 |
 | 3000 | FALSE | 66 |
@@ -236,11 +236,11 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 --UKB TRUE \
 --folder_output SIM \
 --t1e FALSE \
---seed C \
+--seed SEED \
 ```
 
 | A      | B | C |
-| ----- | ----- | -- |
+| ----- | ----- | ---- |
 | 0.05 | 300 | 70 |
 | 0.05 | 600 | 71 |
 | 0.05 | 3000 | 72 |
