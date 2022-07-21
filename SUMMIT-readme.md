@@ -266,13 +266,13 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 
 ## Tips
 
-Depending on your computing environment, you may need to manually modify line 55 of ```Simulation.R```. Since we were working on a SLURM-managed environment, we used
+Since we were working on a SLURM-managed environment, in line 55 of ```Simulation.R```, we used
 
 ```
 Sys.getenv("SLURM_ARRAY_TASK_ID")
 ```
 
-to get the sub-job's index from the global environment.
+to get the sub-job's index from the global environment. Depending on your computing environment, you may need to manually modify this line. 
 
 In line 663 of ```Simulation.R```, you can change ```runs``` to a smaller number to save time and still get results that are very similar to ours.
 
