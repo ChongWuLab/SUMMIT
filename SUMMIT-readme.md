@@ -266,7 +266,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 
 ## Tips
 
-In line 663, you can change ```runs``` to a smaller number to save time and still get results that are very similar to ours.
+In line 663 of ```Simulation.R```, you can change ```runs``` to a smaller number to save time and still get results that are very similar to ours.
 
 ## Notes
 
