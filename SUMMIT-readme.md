@@ -50,7 +50,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 ```
 
 | A      | B | C |
-| ----- | ----- | ----- | -- |
+| ----- | ----- | -- |
 | 0.005 | 300 | 13 |
 | 0.005 | 600 | 14 |
 | 0.005 | 3000 | 15 |
