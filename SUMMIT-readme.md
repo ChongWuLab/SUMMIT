@@ -272,7 +272,7 @@ Since we were working on a SLURM-managed environment, in line 55 of ```Simulatio
 Sys.getenv("SLURM_ARRAY_TASK_ID")
 ```
 
-to get the sub-job's index from the global environment. Depending on your computing environment, you may need to manually modify this line. 
+to get the sub-job's index from the global environment. Depending on your computing environment, you may need to manually modify this line.
 
 In line 663 of ```Simulation.R```, you can change ```runs``` to a smaller number to save time and still get results that are very similar to ours.
 
