@@ -223,7 +223,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 | 31684 | TRUE | 69 |
 
 
-### Supplementary Figure 6
+### Supplementary Figure 7
 
 ```
 Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
@@ -248,7 +248,7 @@ Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
 | 0.05 | 31684 | 74 |
 
 
-### Supplementary Figure 7
+### Supplementary Figure 8
 
 ```
 Rscript /gpfs/research/chongwu/zichenzhang/SUMMIT-test/code/Simulation.R \
