@@ -121,4 +121,4 @@ Maintainer: [Zichen Zhang] (zz17@fsu.edu)
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2013-present, Zichen Zhang (zz17@fsu.edu)
+Copyright (c) 2013-present, Zichen Zhang (zz17@fsu.edu), Chong Wu (cwu3@fsu.edu)
