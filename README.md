@@ -8,9 +8,7 @@ Following is an illustration figure on SUMMIT's workflow.
 <img src="illustration.bmp" alt="workflow" width="700"/>
 </p>
 
-More details on SUMMIT are extensively described in,
-
-> [LINK-1]
+More details on SUMMIT are extensively described in the pdf files in this repository.
 
 ## Outline
 
