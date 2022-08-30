@@ -67,7 +67,7 @@ All the ready-to-use SUMMIT Whole_Blood imputation models can be found here: LIN
 
 We have uploaded our pre-calculated expression imputation models (Tissue: whole blood) to osf.io (https://doi.org/10.17605/OSF.IO/7MXSA).
 
-The Zenodo repository contains two zip files. ``SUMMIT-weight-pos.zip`` contains models that use chromosome plus position (CHR + POS) to match the SNPs in our models to the SNPs in GWAS summary data; ``SUMMIT-weight-rsid.zip`` uses rsID to match.
+The OSF repository contains two zip files. ``SUMMIT-weight-pos.zip`` contains models that use chromosome plus position (CHR + POS) to match the SNPs in our models to the SNPs in GWAS summary data; ``SUMMIT-weight-rsid.zip`` uses rsID to match.
 
 ### Pre-process your summary statistics using APSS
 
