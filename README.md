@@ -60,7 +60,7 @@ Both ```mainbody_cpp_rsid_precise.R``` and ```mainbody_cpp_pos_precise.R``` cont
 
 We have uploaded our pre-calculated expression imputation models (Tissue: whole blood) to osf.io (https://doi.org/10.17605/OSF.IO/7MXSA).
 
-The OSF repository contains two zip files. ``SUMMIT-weight-pos.zip`` contains models that use chromosome plus position (CHR + POS) to match the SNPs in our models to the SNPs in GWAS summary data; ``SUMMIT-weight-rsid.zip`` uses rsID to match.
+The osf.io repository contains two zip files. ``SUMMIT-weight-pos.zip`` contains models that use chromosome plus position (CHR + POS) to match the SNPs in our models to the SNPs in GWAS summary data; ``SUMMIT-weight-rsid.zip`` uses rsID to match.
 
 ### Pre-process your summary statistics using APSS
 
