@@ -4,7 +4,7 @@
 
 **Summary-level Unified Method for Modeling Integrated Transcriptome (SUMMIT)**, is a novel framework designed to improve the expression prediction model accuracy and the power of sequential TWAS by leveraging a very large expression quantitative trait loci (eQTL) summary-level dataset. One benefit of SUMMIT is that it can deal with genes with moderate-low expression heritability, which have been largely ignored by conventional TWAS.
 
-Here is an illustration figure of SUMMIT's workflow.
+### SUMMIT's workflow.
 
 <p align="center">
 <img src="illustration.bmp" alt="workflow" width="700"/>
@@ -12,9 +12,7 @@ Here is an illustration figure of SUMMIT's workflow.
 
 Please cite the following manuscript for using SUMMIT and gene expression models built by SUMMIT:
 
-~~~
-Zhang, Z., Bae, Y. E., Bradley, J. R., Wu, L., & Wu, C. (2021). SUMMIT: An integrative approach for better transcriptomic data imputation improves causal gene identification. medRxiv. Under Review.
-~~~
+> Zhang, Z., Bae, Y. E., Bradley, J. R., Wu, L., & Wu, C. (2021). SUMMIT: An integrative approach for better transcriptomic data imputation improves causal gene identification. medRxiv. Under Review.
 
 
 ### Replication:
