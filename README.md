@@ -10,9 +10,7 @@ Following is an illustration figure of SUMMIT's workflow.
 <img src="illustration.bmp" alt="workflow" width="700"/>
 </p>
 
-For a complete replication of the results in our manuscript, please see our tutorials:
-
-[![DOI]](https://doi.org/10.17605/OSF.IO/BS3QU)
+For a complete replication of the results in our manuscript, please see our tutorials@OSF.org (https://doi.org/10.17605/OSF.IO/BS3QU)
 
 ## Outline
 
