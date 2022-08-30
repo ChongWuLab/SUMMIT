@@ -10,7 +10,7 @@ Following is an illustration figure of SUMMIT's workflow.
 <img src="illustration.bmp" alt="workflow" width="700"/>
 </p>
 
-For a complete replication of the results in our manuscript, please see our tutorials at OSF.org (https://doi.org/10.17605/OSF.IO/BS3QU).
+For a complete replication of the results in our manuscript, please see our tutorials at OSF.io (https://doi.org/10.17605/OSF.IO/BS3QU).
 
 ## Outline
 
@@ -65,7 +65,7 @@ All the ready-to-use SUMMIT Whole_Blood imputation models can be found here: LIN
 
 ### Download our pre-calculated models
 
-We have uploaded our pre-calculated expression imputation models (Tissue: whole blood) to Zenodo[![DOI]](https://doi.org/10.17605/OSF.IO/BS3QU).
+We have uploaded our pre-calculated expression imputation models (Tissue: whole blood) to osf.io (https://doi.org/10.17605/OSF.IO/7MXSA).
 
 The Zenodo repository contains two zip files. ``SUMMIT-weight-pos.zip`` contains models that use chromosome plus position (CHR + POS) to match the SNPs in our models to the SNPs in GWAS summary data; ``SUMMIT-weight-rsid.zip`` uses rsID to match.
 
@@ -103,7 +103,7 @@ For both functions, the input arguments are:
 
 ```--path.ref``` is the path of the reference panel used plus the prefixes of reference panel files.
 
-```--trait``` is the name of the input summary statistics files.
+```--trait``` is the path plus name of the input summary statistics files.
 
 ```--path.out``` is the path of the output folder.
 
@@ -124,6 +124,7 @@ Rscript step2_pos.R \
 --path.ref my-reference-panel/1000G.EUR.ALLSNP.QC.CHR \
 --trait my-trait-1 \
 --path.out my-output-folder \
+--parallel 100
 ```
 
 ```
@@ -132,6 +133,7 @@ Rscript step2_rsid.R \
 --path.ref my-reference-panel/1000G.EUR.ALLSNP.QC.CHR \
 --trait my-trait-2 \
 --path.out my-output-folder \
+--parallel 50
 ```
 
 ## License
