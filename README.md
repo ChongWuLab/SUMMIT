@@ -10,8 +10,6 @@ Following is an illustration figure of SUMMIT's workflow.
 <img src="illustration.bmp" alt="workflow" width="700"/>
 </p>
 
-More details on SUMMIT are extensively described in the pdf files in this repository.
-
 For a complete replication of the results in our manuscript, please see our tutorials:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7033558.svg)](https://doi.org/10.5281/zenodo.7033558)
