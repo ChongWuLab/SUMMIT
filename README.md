@@ -28,38 +28,16 @@ The Mainbody_cpp_xxx_precise functions require a very specific set of processed 
 | Datasets referenced | Usage | How to obtain |
 | ----- | ----- | ---- |
 | gencode.v26.hg19.genes.rds | A look-up list for translating Ensembl IDs into gene names | download from https://www.gencodegenes.org/human/release_26.html |
-| Whole Blood_QCed_rpkm.rds | GTEx-7's subject's gene expression levels | download from https://gtexportal.org and process|
+| Whole Blood_QCed_rpkm.rds | GTEx-7's subject's gene expression levels | download from https://gtexportal.org and process |
 | response.8.RData | GTEx-8's subject's gene expression levels | download from https://gtexportal.org and process |
 | subset-hapmap3 | eQTLGen summary statistics subsetted by HapMap3 | download from https://www.eqtlgen.org/cis-eqtls.html with standard QC, then split into smaller files by gene name |
-| seq.ref | Genotype matrix of reference panel (1000 Genomes Project) | https://www.internationalgenome.org/data |
+| seq.ref | Genotype matrix of reference panel (1000 Genomes Project) | download from https://www.internationalgenome.org/data |
 | seq.8 | Genotype matrix of GTEx-8 subjects | download from https://gtexportal.org and process |
 | chrX.OMNI.interpolated_genetic_map | Genetic distance of reference panel (1000 Genomes Project) | download from https://github.com/joepickrell/1000-genomes-genetic-maps |
 
-
-
-
-
-
-
-#### Reference panel
-
-We used data from 1000 Genome European ancestry as our reference panel. With standard quality control procedure, we splitted the processed data by chromosome.
-
-#### eQTLgen summary statistics
-
-As for the summary-level eQTLgen data, you can download from https://www.eqtlgen.org/cis-eqtls.html. Notice that the eQTLgen dataset is over 3.5Gb, we have splitted them into small ```.RData``` files (You can download from LINK-2) by gene_id after standard quality control. If you do wish to process the summary-level eQTLgen data on your own, please do **NOT** change the column names or column order from eQTLgen's original data.
-
-#### GTEx-7 and GTEx-8 data
-
-As we used both data from GTEx-7 and GTEx-8 as our basis for tuning and model validation, the data we used can be download from:
-
-processed genotype matrix (*X*): LINK-3.
-
-expression level (*Y*): LINK-4.
-
 ### Data alignment
 
-SUMMIT offers two approaches to align the reference panel with the summary-level data. If you wish to align your data by rsID, use mainbody_cpp_rsid_precise.R. If you wish to align your data by chromosome+position, use mainbody_cpp_pos_precise.R.
+SUMMIT offers two approaches to align the reference panel with the eQTL summary-level data. If you wish to align your data by rsID, use mainbody_cpp_rsid_precise.R. If you wish to align your data by chromosome+position, use mainbody_cpp_pos_precise.R.
 
 ### Example run
 
@@ -69,6 +47,7 @@ After we prepared the data, we can train imputation models via the following sin
 Rscript mainbody_cpp_rsid.R \
 --name_batch SCAD_1e-6_rsid \
 --method SCAD \
+--wd MY-WORK-DIR \
 ```
 
 ### Built-in parallel computing
