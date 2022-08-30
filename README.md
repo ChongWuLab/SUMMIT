@@ -12,7 +12,7 @@ Following is an illustration figure of SUMMIT's workflow.
 
 For a complete replication of the results in our manuscript, please see our tutorials:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7033558.svg)](https://doi.org/10.5281/zenodo.7033558)
+[![DOI]](https://doi.org/10.17605/OSF.IO/BS3QU)
 
 ## Outline
 
