@@ -19,9 +19,28 @@ For a complete replication of the results in our manuscript, please see our tuto
 
 ## <a name="TRAIN"></a>Training models
 
-mainbody_cpp_final.R is SUMMIT's main function to train imputation models. It has only 2 input arguments ```--name_batch``` and ```--method```. ```--name_batch``` is the desired name for this batch of output and ```--method``` is designated penalized regression method that you can choose from (LASSO, ElNet, SCAD, MCP, MNet).
+```mainbody_cpp_pos_precise.R/mainbody_cpp_rsid_precise.R``` are SUMMIT's main functions to train imputation models. It has only 3 input arguments ```--name_batch``` ,```--method```, and ```wd```. ```--name_batch``` is the desired name for this batch of output and ```--method``` is designated penalized regression method that you can choose from (LASSO, ElNet, SCAD, MCP, MNet). ```--wd``` is the path of working directory.
 
 ### Data preparation
+
+The Mainbody_cpp_xxx_precise functions require a very specific set of processed data to work properly. Unfortunately, we cannot share all the data with you due to privacy and confidentiality concern. Here, we provide a list of the data that we used. If you need further assistance on how the data were organized/processed, please reach out to us.
+
+| Datasets referenced | Usage | How to obtain |
+| ----- | ----- | ---- |
+| gencode.v26.hg19.genes.rds | A look-up list for translating Ensembl IDs into gene names | na |
+| list.supplementary.rds | A look-up list for translating Ensembl IDs into gene names | na |
+| Whole Blood_QCed_rpkm.rds | GTEx-7's subject's gene expression levels | download from https://gtexportal.org and process|
+| response.8.RData | GTEx-8's subject's gene expression levels | download from https://gtexportal.org and process |
+| subset-hapmap3 | eQTLGen summary statistics subsetted by HapMap3 | download from https://www.eqtlgen.org/cis-eqtls.html with standard QC |
+| seq.ref | Genotype matrix of reference panel (1000 Genomes Project) | https://www.internationalgenome.org/data |
+| seq.8 | Genotype matrix of GTEx-8 subjects | download from https://gtexportal.org and process |
+| chrX.OMNI.interpolated_genetic_map | Genetic distance of reference panel (1000 Genomes Project) | https://github.com/joepickrell/1000-genomes-genetic-maps |
+
+
+
+
+
+
 
 #### Reference panel
 
