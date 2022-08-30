@@ -3,6 +3,8 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Zhang"
   given-names: "Zichen"
+- family-names: "Wu"
+  given-names: "Chong"
 title: "SUMMIT"
 version: 1.0.1
 doi: 10.5281/zenodo.7029793
