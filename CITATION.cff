@@ -6,7 +6,7 @@ authors:
 - family-names: "Wu"
   given-names: "Chong"
 title: "SUMMIT"
-version: 1.0.1
-doi: 10.5281/zenodo.7029793
+version: 1.0.2
+doi: 10.5281/zenodo.7034435
 date-released: 2022-08-28
 url: "https://github.com/ChongWuLab/SUMMIT/"
