@@ -62,7 +62,7 @@ Both ```mainbody_cpp_rsid_precise.R``` and ```mainbody_cpp_pos_precise.R``` cont
 
 ## <a name="TWAS"></a>Association test
 
-### Download our pre-calculated models
+### Gene expression prediction models built by SUMMIT
 
 We have uploaded our pre-calculated expression imputation models (Tissue: whole blood) to osf.io (https://doi.org/10.17605/OSF.IO/7MXSA).
 
