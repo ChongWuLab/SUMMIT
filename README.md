@@ -12,7 +12,7 @@ Following is an illustration figure on SUMMIT's workflow.
 
 More details on SUMMIT are extensively described in the pdf files in this repository.
 
-For a complete replication of figures in our manuscript, please see:
+For a complete replication of figures in our manuscript, please see our source data:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7033558.svg)](https://doi.org/10.5281/zenodo.7033558)
 
