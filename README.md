@@ -27,8 +27,7 @@ The Mainbody_cpp_xxx_precise functions require a very specific set of processed 
 
 | Datasets referenced | Usage | How to obtain |
 | ----- | ----- | ---- |
-| gencode.v26.hg19.genes.rds | A look-up list for translating Ensembl IDs into gene names | na |
-| list.supplementary.rds | A look-up list for translating Ensembl IDs into gene names | na |
+| gencode.v26.hg19.genes.rds | A look-up list for translating Ensembl IDs into gene names | download from https://www.gencodegenes.org/human/release_26.html |
 | Whole Blood_QCed_rpkm.rds | GTEx-7's subject's gene expression levels | download from https://gtexportal.org and process|
 | response.8.RData | GTEx-8's subject's gene expression levels | download from https://gtexportal.org and process |
 | subset-hapmap3 | eQTLGen summary statistics subsetted by HapMap3 | download from https://www.eqtlgen.org/cis-eqtls.html with standard QC, then split into smaller files by gene name |
