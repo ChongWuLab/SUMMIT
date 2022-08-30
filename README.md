@@ -109,6 +109,15 @@ For both functions, the input arguments are:
 
 ```--path.out``` is the path of the output folder.
 
+```--parallel``` is the number of parallel instances
+
+### Parallelization
+
+Unlike other TWAS methods (e.g., PrediXcan), SUMMIT can be a bit more time-consuming. Because SUMMIT does not use a designated correlation matrix (LD matrix) and has more flexibility, the SUMMIT pipeline would spend more time matching models, summary statistics, and reference panel. In addition, each SUMMIT's pre-calculated model file contains models from 5 different types of penalized regression, hence more computation time is needed.
+
+However, with proper parallelization, a complete association study usually takes less than 10 minutes.
+
+
 ### Example run
 
 ```
