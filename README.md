@@ -79,6 +79,13 @@ For both functions, the input arguments are:
 
 ### Data preparation
 
+#### Download our pre-calculated models
+
+We have uploaded our pre-calculated expression imputation models (Tissue: whole blood) to Zenodo.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6869129.svg)](https://doi.org/10.5281/zenodo.6869129)
+
+The Zenodo repository contains two zip files. ``SUMMIT-weight-pos.zip`` contains models that use chromosome plus position (CHR + POS) to match the SNPs in our models to the SNPs in GWAS summary data; ``SUMMIT-weight-rsid.zip`` uses rsID to match.
+
 #### Pre-process your summary statistics using APSS
 
 APSS is an interactive R function that can easily process GWAS summary statistics and shape GWAS summary statistics into any desired format.
