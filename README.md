@@ -65,16 +65,13 @@ All the ready-to-use SUMMIT Whole_Blood imputation models can be found here: LIN
 
 ## <a name="TWAS"></a>Association test
 
-### Data preparation
+### Download our pre-calculated models
 
-#### Download our pre-calculated models
-
-We have uploaded our pre-calculated expression imputation models (Tissue: whole blood) to Zenodo.
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6869129.svg)](https://doi.org/10.5281/zenodo.6869129)
+We have uploaded our pre-calculated expression imputation models (Tissue: whole blood) to Zenodo ([![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6869129.svg)](https://doi.org/10.5281/zenodo.6869129)).
 
 The Zenodo repository contains two zip files. ``SUMMIT-weight-pos.zip`` contains models that use chromosome plus position (CHR + POS) to match the SNPs in our models to the SNPs in GWAS summary data; ``SUMMIT-weight-rsid.zip`` uses rsID to match.
 
-#### Pre-process your summary statistics using APSS
+### Pre-process your summary statistics using APSS
 
 APSS is an interactive R function that can easily process GWAS summary statistics and shape GWAS summary statistics into any desired format.
 
@@ -86,22 +83,25 @@ APSS has 3 principal input arguments.
 
 ```BIG``` is the number of GBs and default is 2. If ```BIG``` is set as 2, then for any summary statistics file bigger than 2GB, APSS will do an exploratory read first. By doing so, APSS could significantly shorten the runtime and handle summary statistics files bigger than 10GB. 
 
-#### The must-have columns
+### The must-have columns
 
 You can use any summary statistics files with reasonable quality control just as long they contain specific columns for SUMMIT to work with.
 
-The must-have columns for SUMMIT are ```A1, A2, Z, CHR```.
+The must-have columns are ```A1, A2, Z, CHR```.
 
-If you are using the rsID-aligned models, you must include ```SNP``` column.
+If you are using the rsID-aligned models, you must also include ```SNP``` column.
 
-If you are using the position-aligned models, you must include ```POS``` column.
+If you are using the position-aligned models, you must also include ```POS``` column.
 
+### The flags
 
 ```step2_pos.R``` is SUMMIT's function for association test using position-aligned models.
 
 ```step2_rsid.R``` is SUMMIT's function for association test using rsID-aligned models.
 
 For both functions, the input arguments are:
+
+```--models``` is the path of the pre-calculated models (Please make sure that the folder contains only model files).
 
 ```--path.ref``` is the path of the reference panel used plus the prefixes of reference panel files.
 
