@@ -31,10 +31,10 @@ The Mainbody_cpp_xxx_precise functions require a very specific set of processed 
 | list.supplementary.rds | A look-up list for translating Ensembl IDs into gene names | na |
 | Whole Blood_QCed_rpkm.rds | GTEx-7's subject's gene expression levels | download from https://gtexportal.org and process|
 | response.8.RData | GTEx-8's subject's gene expression levels | download from https://gtexportal.org and process |
-| subset-hapmap3 | eQTLGen summary statistics subsetted by HapMap3 | download from https://www.eqtlgen.org/cis-eqtls.html with standard QC |
+| subset-hapmap3 | eQTLGen summary statistics subsetted by HapMap3 | download from https://www.eqtlgen.org/cis-eqtls.html with standard QC, then split into smaller files by gene name |
 | seq.ref | Genotype matrix of reference panel (1000 Genomes Project) | https://www.internationalgenome.org/data |
 | seq.8 | Genotype matrix of GTEx-8 subjects | download from https://gtexportal.org and process |
-| chrX.OMNI.interpolated_genetic_map | Genetic distance of reference panel (1000 Genomes Project) | https://github.com/joepickrell/1000-genomes-genetic-maps |
+| chrX.OMNI.interpolated_genetic_map | Genetic distance of reference panel (1000 Genomes Project) | download from https://github.com/joepickrell/1000-genomes-genetic-maps |
 
 
 
