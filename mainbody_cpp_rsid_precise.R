@@ -14,9 +14,6 @@ library(Rcpp)
 # Parameter
 s.array <- 0.1 * (1:9)
 
-# Working directory
-setwd("/gpfs/home/zz17/")
-
 ###########
 # Options #
 ###########
@@ -26,7 +23,9 @@ option_list <- list(
     make_option("--name_batch", type = "character", default = FALSE, action = "store", help = "Name of this batch"
     ),
     make_option("--method"    , type = "character", default = FALSE, action = "store", help = "Method to use"
-    )
+    ),
+    make_option("--wd"        , type = "character", default = FALSE, action = "store", help = "Working directory"
+    )  
 )
 
 opt <- parse_args(OptionParser(option_list = option_list))
@@ -34,6 +33,7 @@ opt <- parse_args(OptionParser(option_list = option_list))
 # Pass the options to variables
 batch  <- opt$name_batch
 method <- opt$method
+setwd(opt$wd)
 
 #######################
 # Quick-submit gadget #
@@ -45,28 +45,23 @@ Sys.sleep(runif(1, 0, 30))
 # Setting up the folders
 null.object <- NULL
 
-if (!dir.exists("current-project/quick-submit/to-do")) {
-    dir.create("current-project/quick-submit/to-do")
-    dir.create("current-project/quick-submit/working")
-    dir.create("current-project/quick-submit/done")
-    dir.create("current-project/quick-submit/error")
+dir.create("quick-submit", showWarnings = TRUE) 
+if (!dir.exists("quick-submit/to-do")) {
+    dir.create("quick-submit/to-do")
+    dir.create("quick-submit/working")
+    dir.create("quick-submit/done")
+    dir.create("quick-submit/error")
     for (qwerty in 1:19227) {
-        save(null.object, file = paste0("current-project/quick-submit/to-do/", qwerty))
+        save(null.object, file = paste0("quick-submit/to-do/", qwerty))
     }
 }
-
-########################
-# Exterior executables #
-########################
-
-path.Plink <- "/gpfs/home/zz17/resource/executables/plink"
 
 ##########################
 # User-defined functions #
 ##########################
 
 # Cpp functions
-suppressMessages(sourceCpp("current-project/code/DetectAndSolve_debugged.cpp"))
+suppressMessages(sourceCpp("DetectAndSolve_debugged.cpp"))
 
 # FindOptimalResult
 FindOptimalResult <- function(response.true) {
@@ -103,7 +98,7 @@ FindOptimalResult <- function(response.true) {
 FindOptimalResult <- cmpfun(FindOptimalResult)
 
 # PatchUp
-source("current-project/code/PatchUp.R")
+source("PatchUp.R")
 
 PatchUp <- cmpfun(PatchUp)
 
@@ -155,7 +150,7 @@ Translate <- cmpfun(Translate)
 # Read GTEx-7's subject list #
 ##############################
 
-raw    <- readRDS("resource/gtex-7/response/Whole Blood_QCed_rpkm.rds")
+raw    <- readRDS("Whole Blood_QCed_rpkm.rds")
 list.7 <- rownames(raw$qced.exp)
 
 rm(raw)
@@ -164,7 +159,7 @@ rm(raw)
 # Read GTEx-8's expression data (response.8.RData is already translated) #
 ##########################################################################
 
-load("resource/gtex-8/response/response.8.RData")
+load("response.8.RData")
 
 ####################
 # List of subjects #
@@ -180,24 +175,24 @@ list.valid <- list.8[which(!(list.8 %in% list.7))]
 # There are 19,227 genes in total! #
 ####################################
 
-filenames <- dir("resource/ss-eqtlgen/subset-hapmap3")
+filenames <- dir("subset-hapmap3")
 
 # Quick-submit gadget
 while (TRUE) {
-    if (length(dir("current-project/quick-submit/to-do")) == 0) {
+    if (length(dir("quick-submit/to-do")) == 0) {
         print("All jobs are done!")
         break
     } else {
         # Get the job
-        to_do <- as.numeric(dir("current-project/quick-submit/to-do"))
+        to_do <- as.numeric(dir("quick-submit/to-do"))
         if (length(to_do) == 1) {
             i <- to_do[1]
         } else {
             i <- sample(to_do, 1)
         }
         # Ship the job to "working" folder
-        save(null.object, file = paste0("current-project/quick-submit/working/", i))
-        file.remove(paste0("current-project/quick-submit/to-do/", i))
+        save(null.object, file = paste0("quick-submit/working/", i))
+        file.remove(paste0("quick-submit/to-do/", i))
     }
 
     # Start keeping track of runtime
@@ -207,7 +202,7 @@ while (TRUE) {
     # Preprocess ss #
     #################
 
-    load(paste0("resource/ss-eqtlgen/subset-hapmap3/", filenames[i]))
+    load(paste0("ss-eqtlgen/subset-hapmap3/", filenames[i]))
 
     # Get the name and chromosome of to-be-processed gene
     gene.ENSG   <- ss$Gene[1]
@@ -284,18 +279,18 @@ while (TRUE) {
 
     # Skip this round of iteration if ss is empty to begin with
     if (nrow(ss) == 0) {
-        file.connection <- file(paste0("current-project/quick-submit/error/", i, ".error0"))
+        file.connection <- file(paste0("quick-submit/error/", i, ".error0"))
         writeLines("Empty summary statistics to begin with!", file.connection)
         close(file.connection)
-        file.remove(paste0("current-project/quick-submit/working/", i))
-        save(null.object, file=paste0("current-project/quick-submit/done/", i))
+        file.remove(paste0("quick-submit/working/", i))
+        save(null.object, file=paste0("quick-submit/done/", i))
 
         next
     }
 
     # Read the bim files of GTEx-8 and reference panel
-    bim.8   <- as.data.frame(fread(paste0("resource/gtex-8/sequence_reprocessed/qced_chr", chr, ".bim")))
-    bim.ref <- as.data.frame(fread(paste0("resource/1000-genome/sequence/1000G.EUR.ALLSNP.QC.CHR", chr, ".bim")))
+    bim.8   <- as.data.frame(fread(paste0("qced_chr", chr, ".bim")))
+    bim.ref <- as.data.frame(fread(paste0("1000G.EUR.ALLSNP.QC.CHR", chr, ".bim")))
 
     # Only keep the SNPs that are simultaneously IN (reference panel, GTEx-8)
     ss <- ss[ss$SNP %in% bim.ref$V2 & ss$SNP %in% bim.8$V2, ]
@@ -319,11 +314,11 @@ while (TRUE) {
 
     # Skip this round of iteration if ss has few row left
     if (nrow(ss) <= 1) {
-        file.connection <- file(paste0("current-project/quick-submit/error/", i, ".error1"))
+        file.connection <- file(paste0("quick-submit/error/", i, ".error1"))
         writeLines("Empty summary statistics after QC!", file.connection)
         close(file.connection)
-        file.remove(paste0("current-project/quick-submit/working/", i))
-        save(null.object, file=paste0("current-project/quick-submit/done/", i))
+        file.remove(paste0("quick-submit/working/", i))
+        save(null.object, file=paste0("quick-submit/done/", i))
 
         next
     }
@@ -333,11 +328,11 @@ while (TRUE) {
     ########################################################
 
     if (!(gene.proper %in% colnames(response.8))) {
-        file.connection <- file(paste0("current-project/quick-submit/error/", i, ".error2"))
+        file.connection <- file(paste0("quick-submit/error/", i, ".error2"))
         writeLines("Gene is not in response.8 and we move on to the next gene!", file.connection)
         close(file.connection)
-        file.remove(paste0("current-project/quick-submit/working/", i))
-        save(null.object, file=paste0("current-project/quick-submit/done/", i))
+        file.remove(paste0("quick-submit/working/", i))
+        save(null.object, file=paste0("quick-submit/done/", i))
 
         next
     }
@@ -348,7 +343,7 @@ while (TRUE) {
 
     # Extract genotype information
     quiet(
-        seq.ref <- BEDMatrix(paste0("resource/1000-genome/sequence/1000G.EUR.ALLSNP.QC.CHR", chr), simple_names = TRUE)
+        seq.ref <- BEDMatrix(paste0("1000G.EUR.ALLSNP.QC.CHR", chr), simple_names = TRUE)
     )
 
     genotype.ref      <- seq.ref[, ss$SNP]
@@ -356,11 +351,11 @@ while (TRUE) {
 
     # Skip this round of iteration if genotype is empty
     if (ncol(genotype.ref) == 0) {
-        file.connection <- file(paste0("current-project/quick-submit/error/", i, ".error3"))
+        file.connection <- file(paste0("quick-submit/error/", i, ".error3"))
         writeLines("Empty reference genotype matrix!", file.connection)
         close(file.connection)
-        file.remove(paste0("current-project/quick-submit/working/", i))
-        save(null.object, file=paste0("current-project/quick-submit/done/", i))
+        file.remove(paste0("quick-submit/working/", i))
+        save(null.object, file=paste0("quick-submit/done/", i))
 
         next
     }
@@ -394,7 +389,7 @@ while (TRUE) {
 
     # The big genotype matrix
     quiet(
-        seq.8 <- BEDMatrix(paste0("resource/gtex-8/sequence_reprocessed/qced_chr", chr), simple_names = TRUE)
+        seq.8 <- BEDMatrix(paste0("qced_chr", chr), simple_names = TRUE)
     )
 
     # Remove the "0_" part of subject IDs
@@ -405,11 +400,11 @@ while (TRUE) {
 
     # Skip this round of iteration if genotype is empty
     if (ncol(genotype.8) == 0) {
-        file.connection <- file(paste0("current-project/quick-submit/error/", i, ".error4"))
+        file.connection <- file(paste0("quick-submit/error/", i, ".error4"))
         writeLines("Empty genotype.8 matrix!", file.connection)
         close(file.connection)
-        file.remove(paste0("current-project/quick-submit/working/", i))
-        save(null.object, file=paste0("current-project/quick-submit/done/", i))
+        file.remove(paste0("quick-submit/working/", i))
+        save(null.object, file=paste0("quick-submit/done/", i))
 
         next
     }
@@ -468,7 +463,7 @@ while (TRUE) {
         temp.cof <- (-2 * n.effective) / n.size
 
         # Read distance information and create an identifer
-        distance <- as.data.frame(fread(paste0("resource/distance-genetic/subset-omni/chr", chr, ".OMNI.interpolated_genetic_map")))
+        distance <- as.data.frame(fread(paste0("chr", chr, ".OMNI.interpolated_genetic_map")))
         names(distance) <- c("SNP", "position", "distance")
 
         # Merge and process
@@ -751,8 +746,8 @@ while (TRUE) {
 
     save <- result.optimal
 
-    dir.create(paste0("output/output_", batch), showWarnings = FALSE)
-    save.chr <- paste0("output/output_", batch, "/Whole_Blood.", gene.ENSG, ".wgt.RData")
+    dir.create(paste0("output_", batch), showWarnings = FALSE)
+    save.chr <- paste0("output_", batch, "/Whole_Blood.", gene.ENSG, ".wgt.RData")
 
     save(save, file = save.chr)
 
@@ -778,14 +773,14 @@ while (TRUE) {
     colnames(wgt.matrix) <- method
     rownames(wgt.matrix) <- ss$SNP
 
-    dir.create(paste0("output/output_twas_", batch), showWarnings = FALSE)
-    save.twas.chr <- paste0("output/output_twas_", batch, "/Whole_Blood.", gene.ENSG, ".wgt.RData")
+    dir.create(paste0("output_twas_", batch), showWarnings = FALSE)
+    save.twas.chr <- paste0("output_twas_", batch, "/Whole_Blood.", gene.ENSG, ".wgt.RData")
     save(cv.performance, snps, wgt.matrix, file = save.twas.chr)
 
     ###############
     # Cleaning-up #
     ###############
 
-    file.remove(paste0("current-project/quick-submit/working/", i))
-    save(null.object, file = paste0("current-project/quick-submit/done/", i))
+    file.remove(paste0("quick-submit/working/", i))
+    save(null.object, file = paste0("quick-submit/done/", i))
 }
