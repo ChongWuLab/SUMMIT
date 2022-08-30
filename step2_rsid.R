@@ -11,19 +11,28 @@ library(optparse)
 
 # Options
 option_list <- list(
+    make_option("--models",   type = "character", default = FALSE, action = "store", help = "Path of the model folder"
+    ),
     make_option("--path.ref", type = "character", default = FALSE, action = "store", help = "Path of the reference panel plus the prefixes"
     ),
-    make_option("--trait"   , type = "character", default = FALSE, action = "store", help = "Name of the trait"
+    make_option("--path.ss",  type = "character", default = FALSE, action = "store", help = "Path of the summary statistics"
+    ),
+    make_option("--trait"   , type = "character", default = FALSE, action = "store", help = "Name of the summary statistics"
     ),
     make_option("--path.out", type = "character", default = FALSE, action = "store", help = "Path of the output file plus the prefixes"
-    )
+    ),
+    make_option("--parallel", type = "numeric",   default = 100,   action = "store", help = "The number of parallel instances"
+    )    
 )
 
 opt <- parse_args(OptionParser(option_list = option_list))
 
-path.ref <- opt$path.ref
-trait    <- opt$trait
-path.out <- opt$path.out
+path.model <- opt$models
+path.ref   <- opt$path.ref
+path.ss    <- opt$path.ss
+trait      <- opt$trait
+path.out   <- opt$path.out
+pieces     <- opt$parallel
 
 # User-defined functions
 # ACAT
@@ -87,14 +96,6 @@ PatchUp <- function(M) {
     return(M)
 }
 
-# Options for test runs
-test <- FALSE
-if (test) {
-    path.ref <- "/gpfs/home/zz17/resource/1000-genome/sequence/1000G.EUR.ALLSNP.QC.CHR"
-    trait    <- "COVID-B2-V5"
-    path.out <- "/gpfs/research/chongwu/zichenzhang/output/test-run/SUMMIT/"
-}
-
 # Object to store the output
 out <- data.frame(
     gene_symbol = character(),
@@ -119,10 +120,12 @@ out <- data.frame(
 )
 
 # Total number of jobs = 16864
-files <- dir("/gpfs/home/zz17/output/output_rsid/")
+files <- dir(path.model)
+
+size.pieces <- ceiling(length(files) / pieces)
 
 # Main iteration
-for (gene.index in (1 + (job.id - 1) * 100):(min(16864, job.id * 100))) {
+for (gene.index in (1 + (id.job - 1) * size.pieces):(min(length(files), id.job * size.pieces))) {
     print(gene.index)
 
     # Start tracking runtime
@@ -132,16 +135,18 @@ for (gene.index in (1 + (job.id - 1) * 100):(min(16864, job.id * 100))) {
     update <- rep(NA, 18)
 
     # Load weight
-    # IFNAR2: load("/gpfs/home/zz17/output/output_pos/Whole_Blood.ENSG00000159110.wgt.RData")
-    load(paste0("/gpfs/home/zz17/output/output_rsid/", files[gene.index]))
+    load(paste0(path.model, files[gene.index]))
     update[5] <- max(out.r2[1, ], na.rm = TRUE)
+    if (update[5] <= 0.005) {
+        next
+    }
 
     # Get the chromosome
     chr <- snps$SNPChr[1]
 
     # Read the summary statistics file
-    if (file.exists(paste0("/gpfs/research/chongwu/zichenzhang/summary-statistics-new/", trait, "-", chr, ".sumstats"))) {
-        ss <- paste0("/gpfs/research/chongwu/zichenzhang/summary-statistics-new/", trait, "-", chr, ".sumstats") %>% fread() %>% as.data.frame()
+    if (file.exists(paste0(path.ss, trait, "-", chr, ".sumstats"))) {
+        ss <- paste0(path.ss, trait, "-", chr, ".sumstats" ) %>% fread() %>% as.data.frame()
     } else {
         next
     }
@@ -288,4 +293,4 @@ for (gene.index in (1 + (job.id - 1) * 100):(min(16864, job.id * 100))) {
 
 # Write the result
 dir.create(paste0(path.out, trait))
-write.table(out, file = paste0(path.out, trait, "/", trait, "-", job.id), row.names = FALSE, quote = FALSE)
+write.table(out, file = paste0(path.out, trait, "/", trait, "-", id.job), row.names = FALSE, quote = FALSE)
