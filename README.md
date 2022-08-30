@@ -115,7 +115,7 @@ For both functions, the input arguments are:
 
 Unlike other TWAS methods (e.g., PrediXcan), SUMMIT can be a bit more time-consuming. Because SUMMIT does not use a designated correlation matrix (LD matrix), the SUMMIT pipeline would spend more time matching models, summary statistics, and reference panel. In addition, each SUMMIT's pre-calculated model file contains models from 5 different types of penalized regression, hence more computation time is needed.
 
-However, with proper parallelization, a complete association study usually takes less than 10 minutes. For example, if you decided to split the association tests into 20 smaller subjobs, an index (from 1 to 20) would need to be explicitly passed on to R from the global environment. Depending on your computing environment, you
+However, with proper parallelization, a complete association study usually takes less than 10 minutes. For example, if you decided to split the association tests into 20 smaller subjobs, an index (from 1 to 20) would need to be explicitly passed on to R from the global environment and the ```--parallel``` flag should be set to 20. Depending on your computing environment, you
 may need to manually modify line 2 in ```step2_pos.R/step2_rsid.R```. 
 
 ### Example run
