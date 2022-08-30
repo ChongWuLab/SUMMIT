@@ -151,8 +151,8 @@ Rscript step2_rsid.R \
 | 5 | r2_test | Best model's R^2 on testing data  |
 | 6-10 | p_ElNet | p-value of TWAS (Method is after the underscore) |
 | 11-15 | z_ElNet | Z-score of TWAS (Method is after the underscore) |
-| 16 | p_ACAT | Gene position |
-| 17 | gene_pos | 9   |
+| 16 | p_ACAT | The combined ACAT p-value |
+| 17 | gene_pos | Gene position  |
 | 18 | runtime | Runtime |
     
 ## License
