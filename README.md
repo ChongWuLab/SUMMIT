@@ -41,7 +41,7 @@ SUMMIT offers two approaches to align the reference panel with the eQTL summary-
 
 ### Example run
 
-After we prepared the data, we can train imputation models via the following single line.
+After we prepared the data, we can train imputation models via the following command.
 
 ```
 Rscript mainbody_cpp_rsid.R \
