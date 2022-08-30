@@ -4,6 +4,8 @@ authors:
 - family-names: "Zhang"
   given-names: "Zichen"
   orcid: "https://orcid.org/0000-0002-2122-0796"
+ - family-names: "Wu"
+  given-names: "Chong"
 title: "SUMMIT"
 version: 1.0.1
 doi: 10.5281/zenodo.7029793
