@@ -33,13 +33,13 @@ The Mainbody_cpp_xxx_precise functions require a very specific set of processed 
 
 | Datasets referenced | Usage | How to obtain |
 | ----- | ----- | ---- |
-| gencode.v26.hg19.genes.rds | A look-up list for translating Ensembl IDs into gene names | download from https://www.gencodegenes.org/human/release_26.html |
-| Whole Blood_QCed_rpkm.rds | GTEx-7's subject's gene expression levels | download from https://gtexportal.org and process |
-| response.8.RData | GTEx-8's subject's gene expression levels | download from https://gtexportal.org and process |
-| subset-hapmap3 | eQTLGen summary statistics subsetted by HapMap3 | download from https://www.eqtlgen.org/cis-eqtls.html with standard QC, then split into smaller files by gene name |
-| seq.ref | Genotype matrix of reference panel (1000 Genomes Project) | download from https://www.internationalgenome.org/data |
-| seq.8 | Genotype matrix of GTEx-8 subjects | download from https://gtexportal.org and process |
-| chrX.OMNI.interpolated_genetic_map | Genetic distance of reference panel (1000 Genomes Project) | download from https://github.com/joepickrell/1000-genomes-genetic-maps |
+| gencode.v26.hg19.genes.rds | A look-up list for translating Ensembl IDs into gene names | downloaded from https://www.gencodegenes.org/human/release_26.html |
+| Whole Blood_QCed_rpkm.rds | GTEx-7's subject's gene expression levels | downloaded from https://gtexportal.org and processed |
+| response.8.RData | GTEx-8's subject's gene expression levels | downloaded from https://gtexportal.org and processed |
+| subset-hapmap3 | eQTLGen summary statistics subsetted by HapMap3 | downloaded from https://www.eqtlgen.org/cis-eqtls.html with standard QC, then split into smaller files by gene name |
+| seq.ref | Genotype matrix of reference panel (1000 Genomes Project) | downloaded from https://www.internationalgenome.org/data |
+| seq.8 | Genotype matrix of GTEx-8 subjects | downloaded from https://gtexportal.org and process |
+| chrX.OMNI.interpolated_genetic_map | Genetic distance of reference panel (1000 Genomes Project) | downloaded from https://github.com/joepickrell/1000-genomes-genetic-maps |
 
 ### Data alignment
 
