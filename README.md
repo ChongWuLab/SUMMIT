@@ -2,9 +2,9 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7029793.svg)](https://doi.org/10.5281/zenodo.7029793)
 
-Summary-level Unified Method for Modeling Integrated Transcriptome (SUMMIT), is a novel framework designed to improve the expression prediction model accuracy and the power of TWAS by leveraging a very large expression quantitative trait loci (eQTL) summary-level dataset.
+Summary-level Unified Method for Modeling Integrated Transcriptome (SUMMIT), is a novel framework designed to improve the expression prediction model accuracy and the power of sequential TWAS by leveraging a very large expression quantitative trait loci (eQTL) summary-level dataset.
 
-Following is an illustration figure on SUMMIT's workflow.
+Following is an illustration figure of SUMMIT's workflow.
 
 <p align="center">
 <img src="illustration.bmp" alt="workflow" width="700"/>
