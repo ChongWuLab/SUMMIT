@@ -65,18 +65,6 @@ All the ready-to-use SUMMIT Whole_Blood imputation models can be found here: LIN
 
 ## <a name="TWAS"></a>Association test
 
-```step2_pos.R``` is SUMMIT's function for association test using position-aligned models.
-
-```step2_rsid.R``` is SUMMIT's function for association test using rsID-aligned models.
-
-For both functions, the input arguments are:
-
-```--path.ref``` is the path of the reference panel used plus the prefixes of reference panel files.
-
-```--trait``` is the name of the input summary statistics files.
-
-```--path.out``` is the path of the output folder.
-
 ### Data preparation
 
 #### Download our pre-calculated models
@@ -107,6 +95,19 @@ The must-have columns for SUMMIT are ```A1, A2, Z, CHR```.
 If you are using the rsID-aligned models, you must include ```SNP``` column.
 
 If you are using the position-aligned models, you must include ```POS``` column.
+
+
+```step2_pos.R``` is SUMMIT's function for association test using position-aligned models.
+
+```step2_rsid.R``` is SUMMIT's function for association test using rsID-aligned models.
+
+For both functions, the input arguments are:
+
+```--path.ref``` is the path of the reference panel used plus the prefixes of reference panel files.
+
+```--trait``` is the name of the input summary statistics files.
+
+```--path.out``` is the path of the output folder.
 
 ### Example run
 
