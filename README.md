@@ -2,14 +2,22 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7034435.svg)](https://doi.org/10.5281/zenodo.7034435)
 
-**Summary-level Unified Method for Modeling Integrated Transcriptome (SUMMIT)**, is a novel framework designed to improve the expression prediction model accuracy and the power of sequential TWAS by leveraging a very large expression quantitative trait loci (eQTL) summary-level dataset.
+**Summary-level Unified Method for Modeling Integrated Transcriptome (SUMMIT)**, is a novel framework designed to improve the expression prediction model accuracy and the power of sequential TWAS by leveraging a very large expression quantitative trait loci (eQTL) summary-level dataset. One benefit of SUMMIT is that it can deal with genes with moderate-low expression heritability, which have been largely ignored by conventional TWAS.
 
-Following is an illustration figure of SUMMIT's workflow.
+Here is an illustration figure of SUMMIT's workflow.
 
 <p align="center">
 <img src="illustration.bmp" alt="workflow" width="700"/>
 </p>
 
+Please cite the following manuscript for using SUMMIT and gene expression models built by SUMMIT:
+
+~~~
+Zhang, Z., Bae, Y. E., Bradley, J. R., Wu, L., & Wu, C. (2021). SUMMIT: An integrative approach for better transcriptomic data imputation improves causal gene identification. medRxiv. Under Review.
+~~~
+
+
+### Replication:
 For a complete replication of the results in our manuscript, please see our tutorials at osf.io (https://doi.org/10.17605/OSF.IO/BS3QU).
 
 ## Outline
@@ -147,8 +155,12 @@ Rscript step2_rsid.R \
 | 16 | p_ACAT | The combined ACAT p-value |
 | 17 | gene_pos | Gene position  |
 | 18 | runtime | Runtime |
-    
-## License
+
+### Disclaimer
+
+The built gene expression prediction models and software are provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the models or the use or other dealings in the models.
+
+### License
 
 Maintainer: [Zichen Zhang] (zz17@fsu.edu)
 
