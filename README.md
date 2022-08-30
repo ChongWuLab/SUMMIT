@@ -103,25 +103,28 @@ For both functions, the input arguments are:
 
 ```--path.ref``` is the path of the reference panel used plus the prefixes of reference panel files.
 
+```--path.ss``` is the path of the reference panel (with "/" at the end).
+
 ```--trait``` is the path plus name of the input summary statistics files.
 
-```--path.out``` is the path of the output folder.
+```--path.out``` is the path of the output folder (with "/" at the end).
 
 ```--parallel``` is the number of parallel instances
 
 ### Parallelization
 
-Unlike other TWAS methods (e.g., PrediXcan), SUMMIT can be a bit more time-consuming. Because SUMMIT does not use a designated correlation matrix (LD matrix) and has more flexibility, the SUMMIT pipeline would spend more time matching models, summary statistics, and reference panel. In addition, each SUMMIT's pre-calculated model file contains models from 5 different types of penalized regression, hence more computation time is needed.
+Unlike other TWAS methods (e.g., PrediXcan), SUMMIT can be a bit more time-consuming. Because SUMMIT does not use a designated correlation matrix (LD matrix), the SUMMIT pipeline would spend more time matching models, summary statistics, and reference panel. In addition, each SUMMIT's pre-calculated model file contains models from 5 different types of penalized regression, hence more computation time is needed.
 
-However, with proper parallelization, a complete association study usually takes less than 10 minutes.
-
+However, with proper parallelization, a complete association study usually takes less than 10 minutes. For example, if you decided to split the association tests into 20 smaller subjobs, an index (from 1 to 20) would need to be explicitly passed on to R from the global environment. Depending on your computing environment, you
+may need to manually modify line 2 in ```step2_pos.R/step2_rsid.R```. 
 
 ### Example run
 
 ```
 Rscript step2_pos.R \
---models my-model-folder-pos
+--models my-model-folder-pos \
 --path.ref my-reference-panel/1000G.EUR.ALLSNP.QC.CHR \
+--path.ss my-ss-folder/ \
 --trait my-trait-1 \
 --path.out my-output-folder \
 --parallel 100
@@ -129,8 +132,9 @@ Rscript step2_pos.R \
 
 ```
 Rscript step2_rsid.R \
---models my-model-folder-rsid
+--models my-model-folder-rsid \
 --path.ref my-reference-panel/1000G.EUR.ALLSNP.QC.CHR \
+--path.ss my-ss-folder/ \
 --trait my-trait-2 \
 --path.out my-output-folder \
 --parallel 50
